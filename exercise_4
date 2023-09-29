@@ -1,0 +1,159 @@
+import java.util.Scanner;
+
+public class Exercise4 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Starting....");
+		
+		var s = new Exercise4();
+		s.student();
+
+		
+	}
+	
+	public void student() {
+		
+		Scanner in = new Scanner (System.in);
+		
+		//Student 1
+	    
+		//Enter Student ID
+		System.out.print ("Enter Student ID: ");
+		int studid1 = in.nextInt ();
+		if (studid1 > 99999 )
+		{
+			if (studid1 < 1000000)
+			{
+				
+			}
+		
+		}
+		else 
+		{
+			System.out.println("Error: Student ID must be between 100,000 and 999,999!");
+			
+			return;
+							
+		}
+		//Enter Student Full Name		
+		System.out.print ("Enter Student's Full Name: ");
+		in.nextLine ();
+		String fullname1 = in.nextLine ();
+		
+		//Enter Scholarship Amount
+		System.out.print ("Enter the Student's Scholarship Amount: $");
+		double amt1 = in.nextDouble ();
+		
+		//Enter Student's Email Address
+		System.out.print ("Enter Student's Email Address: ");
+		in.nextLine ();
+		String email1 = in.nextLine ();
+		
+			//Student 2
+		
+			in.nextLine();
+			//Enter Student ID
+			System.out.print ("Enter Student ID: ");
+			int studid2 = in.nextInt ();
+			if (studid2 > 99999 )
+			{
+				if (studid2 < 1000000)
+				{
+					
+				}
+			
+			}
+			else 
+			{
+				System.out.println("Error: Student ID must be between 100,000 and 999,999!");
+				System.out.println("Please restart the program and enter a correct student id");
+				return;
+			}
+		
+			//Enter Student Full Name		
+			System.out.print ("Enter Student's Full Name: ");
+			in.nextLine ();
+			String fullname2 = in.nextLine ();
+			
+			//Enter Scholarship Amount
+			System.out.print ("Enter the Student's Scholarship Amount: $");
+			double amt2 = in.nextDouble ();
+			
+			//Enter Student's Email Address
+			System.out.print ("Enter Student's Email Address: ");
+			in.nextLine ();
+			String email2 = in.nextLine ();
+		
+				
+				//Student 3
+				
+				in.nextLine();
+				//Enter Student ID
+				System.out.print ("Enter Student ID: ");
+				int studid3 = in.nextInt ();
+				if (studid3 > 99999 )
+				{
+					if (studid3 < 1000000)
+					{
+						
+					}
+				
+				}
+				else 
+				{
+					System.out.println("Error: Student ID must be between 100,000 and 999,999!");
+					System.out.println("Please restart the program and enter a correct student id");
+					return;
+				}
+		
+				//Enter Student Full Name		
+				System.out.print ("Enter Student's Full Name: ");
+				in.nextLine ();
+				String fullname3 = in.nextLine ();
+			
+				//Enter Scholarship Amount
+				System.out.print ("Enter the Student's Scholarship Amount: $");
+				double amt3 = in.nextDouble ();
+			
+				//Enter Student's Email Address
+				System.out.print ("Enter Student's Email Address: ");
+				in.nextLine ();
+				String email3 = in.nextLine ();	
+		
+	
+		//Print Student 1
+				
+		in.nextLine();
+	    System.out.println ("Student ID: " + studid1);
+		System.out.println ("Full Name: " + fullname1);
+		System.out.println ("Scholarship Amount: $ " + Math.floor(amt1 * 100)/100d);
+		System.out.println ("Email Address: " + email1);
+		
+		//Print Student 2
+		
+		in.nextLine();
+	    System.out.println ("Student ID: " + studid2);
+		System.out.println ("Full Name: " + fullname2);
+		System.out.println ("Scholarship Amount: $ " + Math.floor(amt2 * 100)/100d);
+		System.out.println ("Email Address: " + email2);
+		
+		//Print Student 3
+		
+		in.nextLine();
+	    System.out.println ("Student ID: " + studid3);
+		System.out.println ("Full Name: " + fullname3);
+		System.out.println ("Scholarship Amount: $ " + Math.floor(amt3 * 100)/100d);
+		System.out.println ("Email Address: " + email3);
+		
+		//Print Average Scholarship Amount
+		
+		in.nextLine();
+		double avgamt = (amt1 + amt2 + amt3)/3;
+		double amt = Math.floor(avgamt * 100)/100d;
+	    System.out.println("Average Scholarship Amount: $ " + amt);
+	    
+	    in.close();
+	
+	}
+}
