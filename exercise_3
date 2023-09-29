@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class exercise3 {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner in = new Scanner (System.in);
+		
+	
+	    
+		//Enter Student ID
+		String password = "password";
+		System.out.print ("Enter Password: ");
+		String pass = in.nextLine();
+				
+		if (pass.equals(password))
+		{
+			System.out.println("Correct!");
+		
+		}
+		else 
+		{
+			System.out.println("Error: Wrong Password!");
+			
+							
+		}
+
+
+	    
+	    in.close();
+	    
+
+	}
+
+}
