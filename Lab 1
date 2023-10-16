@@ -1,0 +1,270 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class lab1 
+{
+	public static int right;
+	public static int wrong;
+	public static int r;
+	public static int w;
+	
+	
+	
+	public static void main(String[] args) 
+	{
+		menu();
+
+	}
+	
+
+	public static void menu()
+	{
+		System.out.println("Guessing Game Menu:");
+		System.out.println("      ");
+		System.out.println(" 1. Computer guesses a number you are thinking of. ");
+		System.out.println(" 2. You guess a number the computer is thinking of. ");
+		System.out.println(" 3. Show game statistics ");
+		System.out.println(" 4. Quit ");
+		System.out.println(" Press number selection to continue....");
+		
+		Scanner scanner = new Scanner(System.in);
+		int input = scanner.nextInt();
+		
+		if(input == 1)
+		{
+			guess();
+			
+		}
+		
+		if(input == 2)
+		{
+			computer();
+			
+		}
+		
+		if(input == 3)
+		{
+			stats();
+			
+		}
+		
+		if(input == 4)
+		{
+			quit();
+			
+		}
+		
+		scanner.close();
+	}
+
+	//Selection 1
+	public static int guess()
+	{
+
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		
+		System.out.println(" Time for the computer to guess!      ");
+
+		 // define the range
+        int max = 500;
+        int min = 1;
+        int range = max - min + 1;
+ 
+        // generate random numbers within 1 to 500
+        for (int i = 0; i < 1; i++) 
+        {
+            int random1 = (int)(Math.random() * range) + min;
+				
+		System.out.println(" The compter guess: " + random1);
+		System.out.println("Is this number low, high, or correct? ");
+		String guess = scanner.next();
+		
+		if(guess.equalsIgnoreCase("correct"))
+		{
+			System.out.println("The Computer was Correct! ");
+			lab1.r++;
+			System.out.println("Right = " + lab1.r);
+			
+		}
+		
+		if(guess.equalsIgnoreCase("low") || guess.equalsIgnoreCase("high"))
+		{
+			System.out.println("The Computer was Wrong! ");
+			lab1.w++;
+			System.out.println("Wrong = " + lab1.w);
+			
+			
+		}
+		
+		System.out.println("Do you want to try again? Y or N ");
+		String guess1 = scanner.next();
+		if(guess1.equalsIgnoreCase("Y"))
+		{
+			//System.out.println("Yes!");
+			guess();
+			
+			
+		}
+	
+		if (guess1.equalsIgnoreCase("N"))
+		{
+			//System.out.println("No!");
+			menu();
+		}
+        }
+		//return 0;
+		return max;
+		
+		
+		
+	}
+	
+	//Selection 2
+	public static  void computer()
+	{
+	
+		System.out.println("Enter your guess:  ");
+		
+		 // define the range
+        int max = 500;
+        int min = 1;
+        int range = max - min + 1;
+ 
+        // generate random numbers within 1 to 10
+        for (int i = 0; i < 1; i++) 
+        {
+            int random2 = (int)(Math.random() * range) + min;
+		
+ 		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		int input = scanner.nextInt();
+	
+
+		
+		if(input >= 0 && input <= 500)
+		{
+			if(input == random2)
+			{
+				System.out.println("Correct! ");
+				System.out.println("Your number is " + random2);
+				lab1.right++;
+				System.out.println("Right = " + lab1.right);
+				//return lab1.right;
+				
+				
+			}
+			
+			else
+			{
+				System.out.println("Wrong! ");
+				System.out.println("Computer number is: " + random2);
+				lab1.wrong++;
+				System.out.println("Wrong = " + lab1.wrong);
+				//return lab1.wrong;
+			
+			}
+		
+		}
+		
+		if(input < 0 && input > 500)
+		{
+			System.out.println("ERROR! Enter a number between 0 and 500!");
+			menu();
+		}
+		
+		System.out.println("Do you want to try again? Y or N ");
+		String input2 = scanner.next();
+		if(input2.equalsIgnoreCase("Y"))
+		{
+			//System.out.println("Yes!");
+			computer();
+			
+			
+		}
+	
+		if (input2.equalsIgnoreCase("N"))
+		{
+			//System.out.println("No!");
+			menu();
+		}
+       }
+		//return 0;
+		
+	}
+	
+	//Selection 3
+	public static  void stats()
+	{
+		int t = (lab1.w + lab1.r);
+		int perW = ((lab1.w/t)*100);
+		int perR = ((lab1.r/t)*100);
+		int total = (lab1.wrong + lab1.right);
+		int percentR = ((lab1.right/total)*100);
+		int percentW = ((lab1.wrong/total)*100);
+		
+		
+		System.out.println("Stats are in! ");
+	
+		
+		
+		
+		
+		if (lab1.right > 0)
+		{
+			
+						
+			System.out.println("You're Right: %" + percentR);
+			
+		}
+		
+		if (lab1.wrong > 0)
+		{
+			
+			
+			System.out.println("You're Wrong: %" + percentW);
+			
+		}
+		
+		if (lab1.wrong < 1 && lab1.right < 1)
+		{
+			
+			System.out.println("Something went wrong! ");
+		}
+		
+		if (lab1.r > 0)
+		{
+			
+						
+			System.out.println("Computer Right: %" + perR);
+			
+		}
+		
+		if (lab1.w > 0)
+		{
+			
+			
+			System.out.println("Computer Wrong: %" + perW);
+			
+		}
+		if (lab1.w < 1 && lab1.r < 1)
+		{
+				
+			System.out.println("Something went wrong! ");
+		}
+	
+		
+		menu();
+		
+		
+	}
+
+	//Selection 4
+	public static void quit()
+	{
+		System.out.println(" Let's quit!     ");
+		System.exit(0);
+	}
+}
