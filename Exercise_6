@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class Exercise6{
+	
+ 	public static void main(String[] args) 
+	{
+		project();
+		
+
+	}
+		
+	public static void project()
+	{
+		
+		Scanner input = new Scanner (System.in); //variable input for Scanner 
+		 String x = null;//variable for Percent of work completed
+		 String z = null;//variable for Client Rating
+		
+		System.out.println("Enter client name: ");
+		
+		String n = input.nextLine ();
+		
+		
+		
+		System.out.println("Enter percent of work complete: ");
+		
+		int p = input.nextInt();
+	
+		if (p > 0 && p <= 100)
+		{
+		
+			
+			
+		}
+		else
+		{
+			System.out.println("ERROR! Enter correct percentage between 0% and 100%! ");
+			project();
+		}
+			if(p >= 0 && p <= 25)
+			{
+				x = "Started Well";
+				
+			}
+			
+			if(p >= 26 && p <= 50)
+			{
+				x = "Work Going Well";
+				
+			}
+			
+			if(p >= 51 && p <= 75)
+			{
+				x = "Work Nearly Done";
+				
+			}
+			
+			if(p >= 76 && p <= 99)
+			{
+				x = "Finishing Up Work";
+			
+			}
+			
+			if(p == 100)
+			{
+				x = "Work Completed";
+				
+			}
+			
+			System.out.println("Satisfaction rating(1 to 10): ");
+			int r = input.nextInt();
+			input.close();
+			
+			if(r >= 0 && r<=4)
+			{
+				z = "Satisfied";
+				
+			}
+			
+			if(r >= 5 && r <= 8)
+			{
+				z = "Happy";
+				
+			}
+			
+			if(r >= 9 && r<= 10)
+			{
+				z = "Ecstatic";
+				
+			}
+			
+		System.out.println("Client Name: " + n ); 
+		System.out.println("Status of Work: " + x );
+		System.out.println("Client Rating: " + z);
+	}
+
+
+}
