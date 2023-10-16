@@ -1,0 +1,32 @@
+
+public class exercise7 {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+	
+	public static void menu()
+	{
+		
+/*       Provide a menu like this to the user:
+
+			Enter grade
+			Display all grades
+			Display average grade
+			Display minimum grade
+			Display maximum grade
+			Quit
+*/
+		
+		
+		
+		
+	}
+	
+	
+
+}
