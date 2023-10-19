@@ -1,0 +1,203 @@
+import java.util.Scanner;
+
+public class Exercise4 {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Starting....");
+		
+		var s = new Exercise4();
+		s.student();
+
+		
+	}
+	
+	public  void student()
+	{
+		int studid1 = 0;
+		int studid2 = 0;
+		int studid3 = 0;
+		
+		
+		//Student 1
+	    
+		//Enter Student ID
+		
+		System.out.print ("Enter Student ID: ");
+		
+		try 
+		{
+			Scanner in = new Scanner (System.in);
+			studid1 = Integer.valueOf(in.nextLine());
+			
+			if (studid1 > 99999 && studid1 < 1000000) 
+		    {
+		        
+		    	
+		    } 
+		   
+		    	else 
+		    	{
+		    		System.out.println("Error: Please enter a valid STudent ID!");
+		    		student();
+		    	}
+		    
+		} 
+		
+		catch (NumberFormatException e) 
+		{
+		    System.out.println("Error: Please enter a valid Student ID!");
+		    student();
+		}
+		
+		
+		
+	
+		Scanner in = new Scanner (System.in);
+		//Enter Student Full Name		
+		System.out.print ("Enter Student's Full Name: ");
+		String fullname1 = in.nextLine ();
+		
+		//Enter Scholarship Amount
+		System.out.print ("Enter the Student's Scholarship Amount: $");
+		double amt1 = in.nextDouble();
+		
+		//Enter Student's Email Address
+		System.out.print ("Enter Student's Email Address: ");
+		String email1 = in.nextLine ();
+		
+			
+		in.nextLine();
+		
+		//Student 2
+		
+			
+			//Enter Student ID
+			System.out.print ("Enter Student ID: ");
+			
+			try
+			{
+				
+				studid2 = Integer.valueOf(in.nextLine());	
+				
+				  if (studid2 > 99999 && studid2 < 1000000) 
+				    {
+				        
+				    } 
+				   
+				      else 
+				    	{
+				    		System.out.println("Error: Please enter a valid Student ID!");
+				    		student();
+				    	}
+				  
+				  
+					  
+				  
+			 }	  
+				  
+			catch (NumberFormatException e) 
+			{
+					    System.out.println("Error: Please enter a valid Student ID!");
+					    student();
+			}
+			
+		
+		
+			//Enter Student Full Name		
+			System.out.print ("Enter Student's Full Name: ");
+			String fullname2 = in.nextLine ();
+			
+			//Enter Scholarship Amount
+			System.out.print ("Enter the Student's Scholarship Amount: $");
+			double amt2 = in.nextDouble();
+			
+			//Enter Student's Email Address
+			System.out.print ("Enter Student's Email Address: ");
+			String email2 = in.nextLine ();
+		
+			in.nextLine();	
+				
+			//Student 3
+				
+				
+				//Enter Student ID
+				System.out.print ("Enter Student ID: ");
+				
+						
+				try 
+				{
+					studid3 = Integer.valueOf(in.nextLine());	
+					
+				    if (studid3 > 99999 && studid3 < 1000000) 
+				    {
+				        
+				    	
+				    } 
+				   
+				    	else 
+				    	{
+				    		System.out.println("Error: Please enter a valid Student ID!");
+				    		student();
+				    	}
+				    
+				} 
+				catch (NumberFormatException e) 
+				{
+				    System.out.println("Error: Please enter a valid Student ID!");
+				    student();
+				}
+			
+					
+				//Enter Student Full Name		
+				System.out.print ("Enter Student's Full Name: ");
+				String fullname3 = in.nextLine ();
+			
+				//Enter Scholarship Amount
+				System.out.print ("Enter the Student's Scholarship Amount: $");
+				double amt3 = in.nextDouble();
+			
+				//Enter Student's Email Address
+				System.out.print ("Enter Student's Email Address: ");
+				String email3 = in.nextLine ();	
+				
+				in.nextLine();
+	
+					//Print Student 1
+				
+						in.nextLine();
+						System.out.println ("Student ID: " + studid1);
+						System.out.println ("Full Name: " + fullname1);
+						System.out.println ("Scholarship Amount: $ " + amt1);
+						System.out.println ("Email Address: " + email1);
+		
+					//Print Student 2
+		
+						in.nextLine();
+						System.out.println ("Student ID: " + studid2);
+						System.out.println ("Full Name: " + fullname2);
+						System.out.println ("Scholarship Amount: $ " + amt2);
+						System.out.println ("Email Address: " + email2);
+		
+					//Print Student 3
+		
+						in.nextLine();
+						System.out.println ("Student ID: " + studid3);
+						System.out.println ("Full Name: " + fullname3);
+						System.out.println ("Scholarship Amount: $ " + amt3);
+						System.out.println ("Email Address: " + email3);
+		
+					//Print Average Scholarship Amount
+		
+						in.nextLine();
+						double amt = amt1 + amt2 + amt3;
+						double n = amt / 3.0 ;
+						double number = Math.round(n * 100.0)/100.0;
+					
+						
+						System.out.println("Average Scholarship Amount: $ " + number);
+	    
+						in.close();
+	
+	}
+}
