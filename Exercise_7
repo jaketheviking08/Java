@@ -1,11 +1,17 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class exercise7 {
+	
+	public static int[] mygrades = new int[100];
+	public static double average;
 
+	
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
 		
-		
+		menu();
 
 	}
 	
@@ -22,11 +28,241 @@ public class exercise7 {
 			Quit
 */
 		
+		System.out.println("Grades Menu:");
+		System.out.println("      ");
+		System.out.println(" 1. Enter grade ");
+		System.out.println(" 2. Display all grades ");
+		System.out.println(" 3. Display average grade ");
+		System.out.println(" 4. Display minimum grade ");
+		System.out.println(" 5. Display maximum grade ");
+		System.out.println(" 6. Quit ");
+		System.out.println(" Press number selection to continue....");
+		
+		Scanner scanner = new Scanner(System.in);
+		int input = scanner.nextInt();
+		
+		if(input == 1)
+		{
+			entergrade();
+			
+		}
+		
+		if(input == 2)
+		{
+			allgrade();
+			
+		}
+		
+		if(input == 3)
+		{
+			averagegrade();
+			
+		}
+		
+		if(input == 4)
+		{
+			mingrade();
+			
+		}
+		
+		if(input == 5)
+		{
+			maxgrade();
+			
+		}
+		
+		if(input == 6)
+		{
+			quit();
+			
+		}
+		
+		scanner.close();
+		
+		
+	}
+	
+	public static  int[] entergrade()
+	{
+		
+       //Enter Grade
+		
+			Scanner scanner = new Scanner(System.in);
+			
+						
+				for (int i = 0; i < 100; i++)
+				{
+					 
+					System.out.println("Enter your Grade: % " );
+				
+						
+					mygrades[i] = scanner.nextInt();
+											
+				}
+				
+				Scanner input = new Scanner(System.in);
+				
+				System.out.println("Press 1 to continue entering grades or 2 to go to menu: ");
+				
+				int x = input.nextInt();
+				
+				if(x == 1)
+				{
+					System.out.println("Array Value: " + Arrays.toString(mygrades));
+					
+					entergrade();
+					return mygrades;
+					
+				}
+				
+				else
+				{
+					menu();
+					return mygrades;
+				}
+				
+	}				
+		
+	public static void allgrade()
+	{
+		
+		System.out.println("All Grades: %" + Arrays.toString(mygrades));
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Press 1 to continue seeing All Grades or 2 to go to menu: ");
+		int x = input.nextInt();
+		
+		System.out.println(x);
+		
+		if(x == 1)
+		{
+			allgrade();
+			
+		}
+		
+		else
+		{
+			menu();
+		}
+		
+		input.close();
+		
+		
+		
+		
+		
+	}
+
+	public static void averagegrade()
+	{
+		double sum = 0.0;
+		
+		
+		for(int i = 0; i < mygrades.length; i++)
+		{
+			if(mygrades[i] > 0)
+			{
+				sum += mygrades[i];
+			}
+			
+			
+		}
+		
+		average = sum/mygrades.length;
+		
+		System.out.println("Avg. Grade: " + "%" + average);
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Press 1 to continue seeing Avg Grade or 2 to go to menu: ");
+		int x = input.nextInt();
+		
+		System.out.println(x);
+		
+		if(x == 1)
+		{
+			averagegrade();
+			
+		}
+		
+		else
+		{
+			menu();
+		}
+		
+		input.close();
+		
 		
 		
 		
 	}
 	
+	public static void mingrade()
+	{
+		
+		Arrays.sort(mygrades);
+		
+		System.out.println("Min Grade: " + "%" + mygrades[0]);
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Press 1 to continue seeing Min Grade or 2 to go to menu: ");
+		int x = input.nextInt();
+		
+		System.out.println(x);
+		
+		if(x == 1)
+		{
+			mingrade();
+			
+		}
+		
+		else
+		{
+			menu();
+		}
+		
+		input.close();
+		
+		
+		
+	}
 	
-
+	public static void maxgrade()
+	{
+		Arrays.sort(mygrades);
+		
+		System.out.println("Max Grade: " + "%" + mygrades[99]);
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Press 1 to continue seeing Max Grade or 2 to go to menu: ");
+		int x = input.nextInt();
+		
+		System.out.println(x);
+		
+		if(x == 1)
+		{
+			maxgrade();
+			
+		}
+		
+		else
+		{
+			menu();
+		}
+		
+		input.close();
+		
+		
+		
+		
+		
+		
+	}
+	
+	public static void quit()
+	{
+		System.out.println(" Let's quit!     ");
+		
+		System.exit(0);
+	}
 }
+
