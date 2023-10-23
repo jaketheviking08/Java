@@ -1,9 +1,14 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
 
 public class exercise8 {
 
-	public static int[] mygrades = new int[100];
+	public static int n = 5;
+	public static List<Integer> mygrades = new ArrayList<Integer>();
+	public static int[] avggrades = new int[100];
 	public static double average;
 	
 	public static void main(String[] args) 
@@ -79,7 +84,7 @@ public class exercise8 {
 		
 	}
 	
-	public static  int[] entergrade()
+	public static  int entergrade()
 	{
 		
        //Enter Grade
@@ -87,13 +92,14 @@ public class exercise8 {
 			Scanner scanner = new Scanner(System.in);
 			
 						
-				for (int i = 0; i < 100; i++)
+				for (int i = 1; i < mygrades.size() ; i++)
 				{
 					 
 					System.out.println("Enter your Grade: % " );
 				
-						
-					mygrades[i] = scanner.nextInt();
+					int grades = 0;	
+					grades = scanner.nextInt();
+					mygrades.add(grades);
 											
 				}
 				
@@ -105,17 +111,17 @@ public class exercise8 {
 				
 				if(x == 1)
 				{
-					System.out.println("Array Value: " + Arrays.toString(mygrades));
+					System.out.println("Array Value: " + mygrades);
 					
 					entergrade();
-					return mygrades;
+					return mygrades.get(n);
 					
 				}
 				
 				else
 				{
 					menu();
-					return mygrades;
+					return mygrades.get(n);
 				}
 				
 	}				
@@ -123,7 +129,7 @@ public class exercise8 {
 	public static void allgrade()
 	{
 		
-		System.out.println("All Grades: %" + Arrays.toString(mygrades));
+		System.out.println("All Grades: %" + mygrades);
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Press 1 to continue seeing All Grades or 2 to go to menu: ");
@@ -155,17 +161,23 @@ public class exercise8 {
 		double sum = 0.0;
 		
 		
-		for(int i = 0; i < mygrades.length; i++)
+		
+	for(int i = 0; i < mygrades.size(); i++)
 		{
-			if(mygrades[i] > 0)
+			if(mygrades.contains(0))
 			{
-				sum += mygrades[i];
+				
+			}
+			
+			else
+			{
+				sum += i;
 			}
 			
 			
 		}
 		
-		average = sum/mygrades.length;
+		average = sum/mygrades.size();
 		
 		System.out.println("Avg. Grade: " + "%" + average);
 		
@@ -196,9 +208,9 @@ public class exercise8 {
 	public static void mingrade()
 	{
 		
-		Arrays.sort(mygrades);
+		mygrades.sort(Comparator.naturalOrder());
 		
-		System.out.println("Min Grade: " + "%" + mygrades[0]);
+		System.out.println("Min Grade: " + "%" + mygrades.get(0));
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Press 1 to continue seeing Min Grade or 2 to go to menu: ");
@@ -225,9 +237,9 @@ public class exercise8 {
 	
 	public static void maxgrade()
 	{
-		Arrays.sort(mygrades);
+		mygrades.sort(Comparator.naturalOrder());
 		
-		System.out.println("Max Grade: " + "%" + mygrades[99]);
+		System.out.println("Max Grade: " + "%" + mygrades.get(99));
 		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Press 1 to continue seeing Max Grade or 2 to go to menu: ");
