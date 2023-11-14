@@ -1,0 +1,216 @@
+
+public class Main {
+
+	static Work w = new Work();
+	
+	public static void main(String[] args) 
+	{
+		
+		w.menu();
+
+	}
+
+}
+
+import java.util.ArrayList;
+
+public class GPA 
+{
+	static Work w = new Work();
+	public void avgGrades()
+	{
+		ArrayList<Double> ag = new ArrayList<Double>(); 
+		ag.add(78.8);
+		ag.add(89.7);
+		ag.add(88.2);
+		ag.add(87.9);
+		ag.add(76.1);
+		
+	
+		double t = ag.get(0) + ag.get(1) + ag.get(2) + ag.get(3) + ag.get(4);
+		double gpa = t/ag.size();
+
+		System.out.println("Total: " + t);
+		System.out.println("GPA: " + gpa);
+		
+		w.menu();
+	}
+	
+}
+
+import java.util.ArrayList;
+
+public class Grade 
+{
+	static Work w = new Work();
+	public void grades()
+	{
+		ArrayList<Integer> g = new ArrayList<Integer>(); 
+		g.add(78);
+		g.add(89);
+		g.add(88);
+		g.add(87);
+		g.add(76);
+		
+	
+		for(int i = 0; i < g.size(); i++)
+			{
+				System.out.println(g.get(i));
+			}
+
+		w.menu();
+		
+	}
+	
+}
+
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class StudentInfo 
+{
+
+	public static ArrayList<String> fn = new ArrayList<String>(); 
+	public static ArrayList<Double> amt = new ArrayList<Double>();
+	public static ArrayList<Integer> id = new ArrayList<Integer>(); 
+	public static ArrayList<Integer> stud = new ArrayList<Integer>();
+	static Work w = new Work();
+	
+	public void Names()
+	{
+		
+		//populate Arrays
+		fn.add("Chad Green");
+		fn.add("David Smith");
+		fn.add("Eric Davis");
+		fn.add("Frank Roberts");
+		fn.add("Greg Allen");
+		amt.add(2200.00);
+		amt.add(4200.00);
+		amt.add(5500.00);
+		amt.add(2700.00);
+		amt.add(4400.00);
+		id.add(1234);
+		id.add(5678);
+		id.add(3214);
+		id.add(5478);
+		id.add(2178);
+		
+		
+		for (int i = 0; i < fn.size(); i++)
+		{
+				
+			System.out.println(fn.get(i) + " $" + amt.get(i) + " " + id.get(i));
+
+		}
+		
+		//System.out.println(fn.get(0) + " $" + amt.get(0));
+		
+		w.menu();
+	}
+
+
+}
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Work 
+{
+
+	static StudentInfo stud = new StudentInfo();
+	static Grade g = new Grade();
+	static GPA gpa = new GPA();
+	static StudentID studID = new StudentID();
+	static Work w = new Work();
+	
+	public int menu()
+	{
+		System.out.println("Student Menu:");
+		System.out.println("      ");
+		System.out.println(" 1. Students Info  ");
+		System.out.println(" 2. Students Grade ");
+		System.out.println(" 3. Students GPA ");
+		System.out.println(" 4. Students ID ");
+		System.out.println(" 5. Quit ");
+		System.out.println("   ");
+		System.out.println(" Press number selection to continue....");
+		
+		
+		Scanner scanner = new Scanner(System.in);
+		int input = scanner.nextInt();
+		
+		if(input == 1)
+		{
+			stud.Names();
+			
+		}
+
+		if(input == 2)
+		{			
+			
+			g.grades();
+			
+		}
+		
+		if(input == 3)
+		{
+			gpa.avgGrades();
+			
+		}
+		
+		if(input == 4)
+		{
+			studID.studentID();
+			
+		}
+		
+		if(input == 5)
+		{
+			exit();
+			
+		}
+		
+		scanner.close();
+		return input;
+
+	}
+	
+	public static void exit()
+	{
+		System.out.println(" Let's quit!     ");
+		
+		System.exit(0);
+		
+	}
+
+ import java.util.ArrayList;
+
+public class StudentID 
+{
+
+	public static ArrayList<Integer> id = new ArrayList<Integer>(); 
+	static Work w = new Work();
+	
+	public  void studentID()
+	{
+		
+		id.add(1234);
+		id.add(5678);
+		id.add(3214);
+		id.add(5478);
+		id.add(2178);
+		
+	
+		for (int i = 0; i < id.size(); i++)
+		{
+			System.out.println(StudentInfo.fn.get(i) + " $" + StudentInfo.amt.get(i) + " " + id.get(i));
+
+		}
+		
+		w.menu();
+	}
+	
+}
