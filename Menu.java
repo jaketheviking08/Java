@@ -3,54 +3,41 @@ import java.util.Scanner;
 public class Menu 
 {
 
-	
-	static LogIn i = new LogIn();
-	static LogOut o = new LogOut();
-
+	static Game start = new Game();
 	
 	public void menu()
 	{
-		
-		System.out.println("Menu:");
+		System.out.println("Tic Tac Toe Menu:");
 		System.out.println("      ");
-		System.out.println(" 1. Log In  ");
-		System.out.println(" 2. Log Out ");
+		System.out.println(" 1. Play the game. ");
+		System.out.println(" 2. Statistics. ");
 		System.out.println(" 3. Quit ");
-		System.out.println("   ");
 		System.out.println(" Press number selection to continue....");
-		
 		
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
 		
 		if(input == 1)
 		{
-			i.login();
-			
+			start.game();			
 		}
-
+		
 		if(input == 2)
 		{
-			o.logout();
+			start.stats();
+			
 			
 		}
-
+		
 		if(input == 3)
 		{
-			System.out.println(" Let's quit!     ");
+			start.quit();
 			
-			System.exit(0);
 			
 		}
 		
+		
 		scanner.close();
-		
-
-		
 	}
-	
-	
-	
-	
 	
 }

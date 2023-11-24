@@ -1,48 +1,19 @@
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main 
 {
 
-	public static int num = 1;
+static Game start = new Game();
 
-	
-		
-	public static void main(String[] args) 
-	{
-		
-		
-		even();
-		odd();
-
-	}
-	
-	public static void even()
-	{
-		System.out.println("The even numbers: ");
-	  for(int e = 100; e > num;)
-	  {
-		  e = e - 2;
-		  
-		  System.out.println(e);
-		  
-		 
-			  
-	  }
-	
-	}
-	
-	public static void odd()
-	{
-		System.out.println("The Even Numbers: ");
-		  for(int n = 101; n > num;)
-		  {
-			
-			  n = n - 2;			  
-			  
-			  System.out.println(n);			  
-			
-				  
-		  }
-		
-	}
-
+static Menu s = new Menu();
+   
+    public static void main(String[] args)
+    {
+        s.menu();
+    }
+    
+    
+    
 }
